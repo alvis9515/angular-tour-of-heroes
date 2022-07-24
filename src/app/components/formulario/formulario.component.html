@@ -1,0 +1,48 @@
+<form >
+    <h1>Formulario</h1>
+    <!------campoprducto-->
+    <div class="sb-3 row">
+        <label class="col-sm-2">Producto</label>
+        <div class="col-sm-10">
+            <input type="text"
+                    class="form-control"
+                    name="producto"
+                    id="producto"
+                    [(ngModel)]="producto">
+        </div>
+
+    </div>
+
+     <!------campo--precio-->
+     <div class="sb-3 row">
+        <label class="col-sm-2">Precio</label>
+        <div class="col-sm-10">
+            <input type="number"
+                    class="form-control"
+                    name="precio|"
+                    id="precio"
+                    [(ngModel)]="precio">
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <h4>Descuento: {{descuentoDesdeHijo}} </h4>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <button type="submit" class="btn btn-primary float-end" (click)="imprimir()">
+                imprimir en consola
+            </button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+                <app-hijo [producto]="producto" (descuentoEmit)="descuentoEmit($event)"></app-hijo>
+        </div>
+    </div>
+</form>
